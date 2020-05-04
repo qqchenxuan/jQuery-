@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="js/jquery-3.5.0.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+        //js动态添加事件
+        function testThing(){
+            //获取元素对象
+            var btn = document.getElementById("btn");
+            //添加事件
+            btn.onclick = function(){
+                alert("我是js方式")
+            }
+        }
+        //jQuery动态添加事件
+        function testBind(){
+               $("#btn2").bind("click",function(){alert("我是bind绑定单机事件")});//bind的两个参数 第一个是事件 第二个是执行的函数
+        }
+        //jQuery动态解绑
+        function testUnfBind(){
+         $("#btn2").unbind("click");
+        }
+
+           //测试one
+        function testOne(){
+            $("#btn3").one("click",function(){alert("我是One")})
+        }
+    //页面载入事件
+        //js方式
+        window.onload=function(){
+            alert("我是onload")
+        }
+        window.onload=function(){
+            alert("我是onload22")
+        }
+         //jquery方式
+        $(document).ready(function(){
+            alert("我是jQuery")
+        })
+        $(document).ready(function(){
+            alert("我是jQuery22")
+        })
+    </script>
+
+</head>
+<body>
+<input type="button" value="测试js动态添加事件" onclick="testThing()">
+<input type="button" value="测试jQuery动态添加事件--bind" onclick="testBind()">
+<input type="button" value="测试jQuery动态解绑事件--unbind" onclick="testUnfBind()">
+<input type="button" value="测试jQuery一次性事件--one" onclick="testOne()">
+<hr>
+<input type="button" id="btn" value="测试js" >
+<input type="button" id="btn2" value="测试jQuery-bind" >
+<input type="button" id="btn3" value="测试jQuery-one" >
+
+
+</body>
+</html>

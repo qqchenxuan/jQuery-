@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="js/jquery-3.5.0.js" charset="utf-8"></script>
+    <script type="text/javascript">
+        function testHtml(){
+            //获取元素对象
+             var showdiv=$("#showdiv")
+            //获取元素的内容
+            alert(showdiv.html()); //返回所有内容 包括标签
+        }
+        function testHtml2(){
+            //获取元素对象
+            var showdiv = $("#showdiv");
+            //修改元素内容
+            showdiv.html("<b>修改你</b>")//修改
+        }
+
+        function testText(){
+            var  showdiv= $("#showdiv");
+            //获取元素内容
+            alert(showdiv.text());
+
+        }
+        function testText2(){
+            var showdiv= $("#showdiv");
+            //修改元素内容
+            showdiv.text("<i>修改你2</i>");
+
+        }
+
+
+    </script>
+</head>
+<body>
+               <h3>操作HTML</h3>
+               <input type="button" value="测试获取元素内容--html（）" onclick="testHtml()">
+               <input type="button" value="测试修改元素内容--html（）" onclick="testHtml2()">
+               <input type="button" value="测试获取元素内容--test（）" onclick="testText()">
+               <input type="button" value="测试修改元素内容--test（）" onclick="testText2()">
+<hr>
+<div id="showdiv">
+    <b>黄军，前面有八路的干活</b>
+
+
+</div>
+</body>
+</html>

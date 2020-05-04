@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="js/jquery-3.5.0.js" type="text/javascript" charset="utf-8">
+    </script>
+    <script type="text/javascript">
+        function test(){
+            $("#showdiv").show(3000);       //show()显示所有隐藏的被选元素        （值） 设置显示的速度
+            $("#showdiv1").hide(3000);
+          //  $("#showdiv").hide(3000);         //hide  如果被选的元素已被显示，则隐藏该元素
+          //  $("#showdiv1").show(3000)
+
+            $("div").toggle(3000);     //toggle() 方法切换元素的可见状态。如果被选元素可见，则隐藏这些元素，如果被选元素隐藏，则显示这些元素。
+
+            $("#showdiv").slideDown(3000); //slideDown() 方法通过使用滑动效果，显示隐藏的被选元素。
+            $("#showdiv1").slideUp(2000);         //通过使用滑动效果，隐藏被选元素，如果元素已显示出来的话。
+            $("#showdiv").fadeOut(2000);      //方法使用淡出效果来隐藏被选元素，假如该元素是隐藏的。
+
+        }
+
+
+    </script>
+    <style type="text/css">
+        #showdiv{
+            height: 300px;
+            background-color: orange;
+            display: none;
+        }
+        #showdiv1{
+            height: 300px;
+            background-color: red;
+
+        }
+
+    </style>
+</head>
+<body onload="test()">
+<div id="showdiv"></div>
+<div id="showdiv1"></div>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="js/jquery-3.5.0.js" charset="utf-8" type="text/javascript"></script>
+    <script type="text/javascript">
+        //jQuery操作样式--css()
+        function test(){
+            var  showdiv=$("#showdiv");
+
+            //操作样式--增加
+            showdiv.css("background-color","orange");
+            //操作样式--获取
+            alert(showdiv.css("width"))
+        }
+        function testCss2(){
+          var showdiv = $("#showdiv2");
+            //操作样式
+             showdiv.css({"border":"solid 1px","width":"300px","height":"300px"});
+
+
+        }
+
+      //jQuery操作样式 --addClass（）
+        function testAddClass(){
+            //获取元素对象
+            var div =  $("#showdiv2");
+                div.addClass("common");
+
+        }
+        function testAddClass2(){
+            //获取元素对象
+            var div =  $("#showdiv2");
+                div.addClass("add");
+
+        }
+
+
+        function testRemoveClass(){
+            //获取元素对象
+            var div = $("#showdiv2");
+            //删除元素样式
+            div.removeClass("add");  //删除addclass 样式
+
+        }
+
+    </script>
+     <style>
+         .common{
+             width: 300px;
+             height: 300px;
+         background-color: aqua;
+         }
+         .add{
+             font-size: 30px;
+             font-weight: bold;
+         }
+
+     </style>
+</head>
+<body>
+       <h3>操作元素样式</h3>
+       <input type="button" value="操作样式--css（）"onclick="test()">
+       <input type="button" value="操作样式--css（）--json"onclick="testCss2()">
+       <input type="button" value="操作样式--addClass（）"onclick="testAddClass()">
+       <input type="button" value="操作样式--addClass（）2"onclick="testAddClass2()">
+       <input type="button" value="操作样式--R（）2"onclick="testRemoveClass()">
+<hr>
+<div id="showdiv" style="width: 300px;height: 300px; border: solid 1px">
+</div>
+
+<div id="showdiv2">
+我是div
+</div>
+
+</body>
+</html>

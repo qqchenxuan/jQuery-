@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="js/jquery-3.5.0.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+
+        var flag= true;
+        //第一种方式
+            function testNa(){
+             if(flag) {
+                 $("#na").slideUp(1000);
+                 $("#naImg").attr("src", "img/w3.png");
+                 flag=false;
+             }else{
+                 $("#na").slideDown(1000);
+                 $("#naImg").attr("src", "img/w1.png");
+                 flag=true;
+             }
+            }
+     //页面载入    纯jQuery方式
+        $(function(){
+         ($("ul>label").click(function(){
+                if(flag) {
+                    $("#na").slideUp(1000);
+                    $("#naImg").attr("src", "img/w3.png");
+                    flag=false;
+                }else{
+                    $("#na").slideDown(1000);
+                    $("#naImg").attr("src", "img/w1.png");
+                    flag=true;
+                }
+            }));
+        })
+        $(document).ready(function(){
+
+        })
+
+    </script>
+    <style type="text/css">
+        ul li{
+            list-style-type: none;
+        }
+        #na{
+            position: relative;
+            left: 20px;
+        }
+    </style>
+</head>
+<body>
+      <h3>jQuery-菜单案例</h3>
+     <hr>
+<ul>
+    <img src="img/w1.png" width="20px" height="20px" id="naImg"/>&nbsp;&nbsp;<label>国际动态</label>
+    <div id="na">
+        <li><img src="img/w2.png" width="20px" height="20px"><label>国内新闻</label></li>
+        <li><img src="img/w2.png" width="20px" height="20px"><label>国际新闻</label></li>
+    </div>
+</ul>
+
+</body>
+</html>

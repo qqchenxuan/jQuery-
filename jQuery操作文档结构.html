@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="js/jquery-3.5.0.js" charset="utf-8"></script>
+    <script type="text/javascript">
+        //内部插入
+        function testAppend(){
+            //获取元素对象
+                   var div = $("#showdiv");
+            //使用内部插入
+                       div.append("<i>,可斩华雄</i>");//追加
+        }
+     function testAppendTo(){
+        var div  = $("#showdiv");
+         //使用appendTo
+         $("#u1").appendTo(div);     //将外别的东西放到里面
+
+     }
+
+        function testPrepend(){
+            var div = $("#showdiv");
+                    //使用Prepend
+                        div.prepend("<i>Prepend,</i>")//将外别的东西放到里面        往前追加
+        }
+      //外部插入
+        function testAfter(){
+            var div = $("#showdiv");
+
+            div.after("<b>after,</b>")//在showdiv    之后加
+
+
+        }
+      function testBefore(){
+          //获取元素对象
+                        var div = $("#showdiv");
+                       div.before("<b>before,</b>")      //在showdiv    之前加
+      }
+
+        //删除
+        function testEmpty(){
+            $("#showdiv").empty()        //empty() 方法从被选元素移除所有内容，包括所有文本和子节点。
+
+        }
+
+
+    </script>
+   <style type="text/css">
+       #showdiv{
+           width: 300px;
+           height: 300px;
+           border: solid orange 1px;
+       }
+
+   </style>
+</head>
+<body>
+
+<input type="button" value="测试append" onclick="testAppend()">
+<input type="button" value="测试appendTo" onclick="testAppendTo()">
+<input type="button" value="测试prepend" onclick="testPrepend()">
+<hr>
+<input type="button" value="测试after" onclick="testAfter()">
+<input type="button" value="测试beffore" onclick="testBefore()">
+<input type="button" value="测试testEmpty()" onclick="testEmpty()">
+<hr>
+           <u id="u1">关云长</u>
+
+          <div id="showdiv">
+
+                  <b>吾有梁将</b>
+          </div>
+</body>
+</html>

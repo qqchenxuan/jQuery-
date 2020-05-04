@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> jquery的封装原理 </title>
+
+    <!--引用外部声明的js文件-->
+    <script src = "js/my.js" type="text/javascript" charset="utf-8"></script>
+
+    <script type="text/javascript">
+        function test(){
+            alert("我是test");
+        }
+     var cx = 123;
+        //闭包原理:全局区中不能获取函数体内的数据。         使用更大作用域的变量来记录小作用域变量的值
+        function testA(){
+            function test2(){
+                test2().name="张三";
+                var n =999;
+                alert(cx);
+                return n;
+            }
+            return test2();
+        }
+
+         var window=123;
+
+    </script>
+
+
+</head>
+<body>
+      <h3> jquery的封装原理 </h3>
+        <hr>
+<input type="button" name="" value="测试" onclick="cx.test()">
+
+
+</body>
+</html>

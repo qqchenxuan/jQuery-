@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery的选择器</title>
+    <!--引入jQuery文件-->
+    <script src="js/jquery-3.5.0.js" type="text/javascript" charset="UTF-8"></script>
+      <script type="text/javascript">
+          //id选择器
+function testId(){
+          //jquery--id
+    var inp = window.$("#uname"); //window 可以省略
+       alert(inp.val())
+}
+         //标签选择器
+          function testEle(){
+              var inps = $("input")  //返回的是数组
+              alert(inps.length);
+          }
+          //类选择器
+          function testClass(){
+              var  inps = $(".class1");  //返回的是数组
+              alert(inps.length);
+          }
+     //组合选择器
+          function testAll(){
+             var eles=$("h3,input");
+             alert(eles.length)
+          }
+
+   //子选择器
+          function testChild(){
+              var inps = $("div>input");
+              alert(inps.length);
+          }
+          //层级
+          function testCj(){
+              var inp = $("input:first");//取得数组的第一个元素
+              alert(inp.val())
+          }
+          function testCj2(){
+              var tds = $("td:not(td[width])");   //返回除了有width 的    td           的td数组
+              alert(tds.length);
+              alert(tds.html()); //第一个td的内容
+          }
+      </script>
+<style type="text/css">
+    .common{}
+    #showdiv{
+        width: 300px;
+        height: 300px;
+        border: 1px solid black;
+    }
+</style>
+</head>
+<body>
+         <h3>jquery的选择器</h3>
+<hr>
+<input type="button" value="测试id选择器" onclick="testId()">
+<input type="button" value="测试标签选择器" onclick="testEle()">
+<input type="button" value="测试class标签选择器" onclick="testClass()">
+<input type="button" value="测试组合标签选择器" onclick="testAll()">
+
+<hr>
+用户名：<input type="text" class="class1" id="uname">
+         <hr>
+         <input type="button" value="测试子选择器选择器" onclick="testChild()">
+         <input type="button" value="测试层级选择器" onclick="testCj()">
+         <input type="button" value="测试层级选择器2" onclick="testCj2()">
+<div id="showdiv">
+<input type="text">
+<input type="text">
+<input type="text">
+<input type="text">
+</div>
+<table border="1px" height="200px">
+    <tr >
+        <td width="100px"></td>
+        <td width="100px"></td>
+        <td width="100px"></td>
+    </tr>
+    <tr >
+        <td>1</td>
+        <td >2</td>
+        <td>3</td>
+    </tr>
+    <tr >
+        <td >4</td>
+        <td>5</td>
+        <td>6</td>
+    </tr>
+
+</table>
+</body>
+</html>
